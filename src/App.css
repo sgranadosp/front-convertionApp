@@ -1,0 +1,15 @@
+.navBar {
+    padding-top: none;
+    max-width: max-content;
+    background-color: blueviolet;
+}
+.custom-register-card .p-card-title {
+  font-size: 3rem; /* título más grande */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.custom-register-card .p-card-subtitle {
+  font-size: 1.2rem; /* subtítulo un poco más grande */
+  margin-bottom: 1.5rem;
+}

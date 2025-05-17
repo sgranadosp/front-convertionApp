@@ -1,0 +1,62 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 64px); /* espacio total menos el navbar */
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.custom-register-card .p-card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.custom-register-card .p-card-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer-privacy-text {
+  font-size: 0.8rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.footer-cond-priv-text {
+  font-size: 0.8rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: blueviolet;
+}
+
+.register-footer-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.custom-register-card button {
+  justify-content: center;
+  background-color: blueviolet;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  border-color: black;
+  cursor: pointer;
+}
+/* Responsividad para móviles */
+@media screen and (max-width: 480px) {
+  .custom-register-card {
+    width: 90% !important;
+  }
+}
