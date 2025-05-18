@@ -59,7 +59,7 @@ function NavBar() {
           onClick={() => navigate("/home")} // aquí rediriges a la página deseada
         >
           <img
-            src="/logoPrueba.png"
+            src="/LogoEasyConv.png"
             style={{ height: "40px", marginRight: "10px", cursor: "pointer" }}
             onClick={() => navigate("/home")}
           />

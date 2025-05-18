@@ -6,11 +6,12 @@ import "./RegisterForm.css";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import LinkTextButton from "./LinkTextButton";
+import { registerUser } from "../services/register.service";
 
 const userSchema = z.object({
-  nombreUsuario: z.string().min(3, "El nombre debe contener al menos 3 letras"),
+  username: z.string().min(3, "El nombre debe contener al menos 3 letras"),
   correo: z.string().email("Formato de correo inválido"),
-  contrasenia: z
+  password: z
     .string()
     .min(8, "La contraseña debe tener al menos 8 caracteres")
     .refine((val) => /[A-Z]/.test(val), {
@@ -36,7 +37,18 @@ const RegisterForm = () => {
     mode: "onSubmit",
   });
 
-  const onSubmit = (data: FieldValues) => console.log(data);
+  const onSubmit = async (data: FieldValues) => {
+    try {
+      const response = await registerUser({
+        username: data.nombreUsuario,
+        correo: data.correo,
+        password: data.contrasenia,
+      });
+      console.log("Usuario registrado:", response);
+    } catch (error) {
+      console.error("Error en el registro:", error);
+    }
+  };
 
   return (
     <>
@@ -62,7 +74,7 @@ const RegisterForm = () => {
                 autoComplete="off"
               >
                 <TextField
-                  {...register("nombreUsuario")}
+                  {...register("username")}
                   id="outlined-basic"
                   label="Nombre de Usuario"
                   variant="outlined"
@@ -71,8 +83,8 @@ const RegisterForm = () => {
                   placeholder="Digite su nombre de usuario"
                   helperText="* Este campo es obligatorio"
                 />
-                {errors.nombreUsuario && (
-                  <p className="text-danger">{errors.nombreUsuario.message}</p>
+                {errors.username && (
+                  <p className="text-danger">{errors.username.message}</p>
                 )}
 
                 <TextField
@@ -90,7 +102,7 @@ const RegisterForm = () => {
                 )}
 
                 <TextField
-                  {...register("contrasenia", { required: true })}
+                  {...register("password", { required: true })}
                   id="outlined-basic"
                   label="Contraseña"
                   variant="outlined"
@@ -99,8 +111,8 @@ const RegisterForm = () => {
                   placeholder="Digite su contraseña"
                   helperText="* Este campo es obligatorio"
                 />
-                {errors.contrasenia && (
-                  <p className="text-danger">{errors.contrasenia.message}</p>
+                {errors.password && (
+                  <p className="text-danger">{errors.password.message}</p>
                 )}
               </Box>
             </div>
