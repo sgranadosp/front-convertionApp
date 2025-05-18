@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, type FieldValues } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Box from "@mui/material/Box";
@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import { Card } from "primereact/card";
 import "./LoginForm.css";
 import LinkTextButton from "./LinkTextButton";
+import { loginUser } from "../services/login.service";
 
 const loginSchema = z.object({
   correo: z
@@ -28,9 +29,17 @@ const LoginForm = () => {
     mode: "onSubmit",
   });
 
-  const onSubmit = async (data: LoginData) => {
+  const onSubmit = async (data: FieldValues) => {
     // Aquí deberías hacer una petición a tu backend para validar usuario
-    console.log("Datos enviados:", data);
+    try {
+      const response = await loginUser({
+        correo: data.correo,
+        password: data.contrasenia,
+      });
+      console.log("Usuario verificado:", response);
+    } catch (error) {
+      console.error("Error en el inicio de sesión:", error);
+    }
 
     // Ejemplo: (puedes adaptarlo a Axios o fetch según uses)
     // const res = await fetch("/api/login", {

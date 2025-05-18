@@ -1,6 +1,8 @@
+// src/pages/ConvImages.tsx
 import React from "react";
 import NavBar from "../components/NavBar";
 import FileUploaderImg from "../components/FileUploaderImg";
+import PrimeReactWrapper from "../PrimeReactWrapper";
 
 const ConvImages = () => {
   return (
@@ -10,7 +12,9 @@ const ConvImages = () => {
       </div>
 
       <div style={{ padding: "5rem" }}>
-        <FileUploaderImg />
+        <PrimeReactWrapper>
+          <FileUploaderImg />
+        </PrimeReactWrapper>
       </div>
     </>
   );
