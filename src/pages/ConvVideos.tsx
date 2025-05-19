@@ -1,5 +1,4 @@
 import React from "react";
-import { FileUpload } from "primereact/fileupload";
 import NavBar from "../components/NavBar";
 import PrimeReactWrapper from "../PrimeReactWrapper";
 import FileUploaderVid from "../components/FileUploaderVid";
