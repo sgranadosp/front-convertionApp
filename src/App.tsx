@@ -8,6 +8,7 @@ import Perfil from "./pages/Perfil";
 import AfterLogIn from "./pages/AfterLogIn";
 import ConvImages from "./pages/ConvImages";
 import ConvVideos from "./pages/ConvVideos";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -15,12 +16,8 @@ function App() {
       <NavBar />
       <div style={{ paddingTop: "64px" }}>
         <Routes>
-          <Route path="/home" element={<Home />} /> //Esta será la landing page
-          <Route
-            path="/"
-            element={<Home />}
-          /> {/* Página principal */} //Esto va a cambiar, la landing page será
-          el Home.tsx
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
           <Route path="/logIn" element={<LogIn />} />
           <Route path="/vidConv" element={<ConvVideos />} />
           <Route path="/imgConv" element={<ConvImages />} />

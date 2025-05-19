@@ -12,7 +12,7 @@ import { Button } from "primereact/button";
 import { Tooltip } from "primereact/tooltip";
 import { Tag } from "primereact/tag";
 
-const FileUploaderImg: React.FC = () => {
+const FileUploaderVid: React.FC = () => {
   const toast = useRef<Toast>(null);
   const [totalSize, setTotalSize] = useState(0);
   const fileUploadRef = useRef<FileUpload>(null);
@@ -59,7 +59,7 @@ const FileUploaderImg: React.FC = () => {
 
   const headerTemplate = (options: FileUploadHeaderTemplateOptions) => {
     const { className, chooseButton, uploadButton, cancelButton } = options;
-    const value = totalSize / 10000;
+    const value = totalSize / 1000000;
     const formatedValue =
       fileUploadRef && fileUploadRef.current
         ? fileUploadRef.current.formatSize(totalSize)
@@ -78,7 +78,7 @@ const FileUploaderImg: React.FC = () => {
         {uploadButton}
         {cancelButton}
         <div className="flex align-items-center gap-3 ml-auto">
-          <span>{formatedValue} / 1 MB</span>
+          <span>{formatedValue} / 100.000 MB</span>
           <ProgressBar
             value={value}
             showValue={false}
@@ -136,7 +136,7 @@ const FileUploaderImg: React.FC = () => {
           style={{ fontSize: "1.2em", color: "var(--text-color-secondary)" }}
           className="my-5"
         >
-          Arrastre su imágen aquí
+          Arrastre su video aquí
         </span>
       </div>
     );
@@ -177,8 +177,8 @@ const FileUploaderImg: React.FC = () => {
         name="demo[]"
         url="/api/upload"
         multiple
-        accept="image/*"
-        maxFileSize={10000000}
+        accept="video/*"
+        maxFileSize={100000000000}
         onUpload={onTemplateUpload}
         onSelect={onTemplateSelect}
         onError={onTemplateClear}
@@ -194,4 +194,4 @@ const FileUploaderImg: React.FC = () => {
   );
 };
 
-export default FileUploaderImg;
+export default FileUploaderVid;

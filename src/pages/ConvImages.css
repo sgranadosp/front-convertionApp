@@ -1,9 +1,13 @@
 .title-text {
     text-align: center;
     margin-top: 1rem;
+    font-weight: 700;
 }
 
 .subtitle-text {
-    text-align: center;
-    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
 }

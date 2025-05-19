@@ -17,12 +17,8 @@ const pages = [
   { label: "Conversión de Videos", path: "/vidConv" },
   { label: "Tutorial", path: "/tutorial" },
 ];
-const settings = [
-  { label: "Historial", path: "/perfilUsuario" },
-  { label: "Cerrar Sesión", path: "/" },
-];
 
-function NavBar() {
+function DataNavbar() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -127,44 +123,9 @@ function NavBar() {
             </Button>
           ))}
         </Box>
-        <Box sx={{ flexGrow: 0 }}>
-          <Tooltip title="Opciones de usuario">
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="public/imgUsuarioblanco.png" />
-            </IconButton>
-          </Tooltip>
-          <Menu
-            sx={{ mt: "45px" }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-          >
-            {settings.map(({ label, path }) => (
-              <MenuItem
-                key={label}
-                onClick={() => {
-                  handleCloseUserMenu();
-                  navigate(path); // redirige a la ruta
-                }}
-              >
-                <Typography sx={{ textAlign: "center" }}>{label}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
       </Toolbar>
     </AppBar>
   );
 }
 
-export default NavBar;
+export default DataNavbar;
