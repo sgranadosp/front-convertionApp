@@ -56,7 +56,7 @@ const LoginForm = () => {
     <div className="card-container">
       <Card
         title="Inicio de Sesión"
-        subTitle="Ingresa tus credenciales para continuar"
+        subTitle="¡Ingresa tus datos y disfruta de nuestros servicios!"
         className="md:w-25rem custom-login-card"
         style={{
           border: "2px solid #673AB7",

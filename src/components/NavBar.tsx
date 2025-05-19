@@ -18,7 +18,7 @@ const pages = [
   { label: "Tutorial", path: "/tutorial" },
 ];
 const settings = [
-  { label: "Perfil", path: "/perfilUsuario" },
+  { label: "Historial", path: "/perfilUsuario" },
   { label: "Cerrar Sesión", path: "/home" },
 ];
 
@@ -60,7 +60,13 @@ function NavBar() {
         >
           <img
             src="/LogoEasyConv.png"
-            style={{ height: "40px", marginRight: "10px", cursor: "pointer" }}
+            style={{
+              height: "62px",
+              width: "62px",
+              marginRight: "15px",
+              marginLeft: "none",
+              cursor: "pointer",
+            }}
             onClick={() => navigate("/home")}
           />
         </Box>
@@ -124,7 +130,7 @@ function NavBar() {
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Opciones de usuario">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="imgUsuario.png" />
+              <Avatar alt="Remy Sharp" src="public/imgUsuarioblanco.png" />
             </IconButton>
           </Tooltip>
           <Menu

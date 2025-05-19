@@ -78,7 +78,7 @@ const FileUploaderImg: React.FC = () => {
         {uploadButton}
         {cancelButton}
         <div className="flex align-items-center gap-3 ml-auto">
-          <span>{formatedValue} / 10 MB</span>
+          <span>{formatedValue} / 1 MB</span>
           <ProgressBar
             value={value}
             showValue={false}
