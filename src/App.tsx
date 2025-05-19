@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Register from "./pages/Register";
 import LogIn from "./pages/LogIn";
 import Tutorial from "./pages/Tutorial";
 import NavBar from "./components/NavBar";
-import { Home } from "@mui/icons-material";
+import Home from "./pages/Home";
 import Perfil from "./pages/Perfil";
 import AfterLogIn from "./pages/AfterLogIn";
 import ConvImages from "./pages/ConvImages";
@@ -19,7 +18,7 @@ function App() {
           <Route path="/home" element={<Home />} /> //Esta será la landing page
           <Route
             path="/"
-            element={<Register />}
+            element={<Home />}
           /> {/* Página principal */} //Esto va a cambiar, la landing page será
           el Home.tsx
           <Route path="/logIn" element={<LogIn />} />

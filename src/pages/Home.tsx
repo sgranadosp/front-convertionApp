@@ -1,7 +1,7 @@
-import React from "react";
+import HomeForm from "../components/homeForm";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <HomeForm />;
 };
 
 export default Home;
