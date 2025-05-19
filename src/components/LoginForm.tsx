@@ -100,7 +100,7 @@ const LoginForm = () => {
           <br />
           <p className="register-footer-text">
             ¿No tienes una cuenta?{" "}
-            <LinkTextButton to="/">Regístrate aquí</LinkTextButton>{" "}
+            <LinkTextButton to="/Register">Regístrate aquí</LinkTextButton>{" "}
             {/* El path debo cambiarlo a /register, el /, osea la landing, será el Homme */}
           </p>
         </form>

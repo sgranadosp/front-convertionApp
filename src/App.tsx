@@ -8,6 +8,7 @@ import Perfil from "./pages/Perfil";
 import AfterLogIn from "./pages/AfterLogIn";
 import ConvImages from "./pages/ConvImages";
 import ConvVideos from "./pages/ConvVideos";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           /> {/* Página principal */} //Esto va a cambiar, la landing page será
           el Home.tsx
           <Route path="/logIn" element={<LogIn />} />
+          <Route path="/Register" element={<Register />} />
           <Route path="/vidConv" element={<ConvVideos />} />
           <Route path="/imgConv" element={<ConvImages />} />
           <Route path="/afterLogin" element={<AfterLogIn />} />
