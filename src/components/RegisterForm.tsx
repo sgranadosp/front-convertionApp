@@ -56,7 +56,7 @@ const RegisterForm = () => {
         <Card
           title="Formulario de Registro"
           subTitle="¡Regístrate y disfruta de nuestros servicios!"
-          className="md:w-25rem custom-register-card"
+          className="md:w-25rem custom-register-card animate__animated animate__bounceIn"
           style={{
             border: "2px solid #673AB7", // púrpura, puedes cambiar el color
             borderRadius: "10px",

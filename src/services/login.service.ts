@@ -31,7 +31,7 @@ export const loginUser = async (userLogData: LoginUserPayload) => {
 
     return await response.json();
   } catch (error: any) {
-    console.error("Error al verificar su usuario:", error);
+    console.error("Error al verificar su usuario", error);
     throw error;
   }
 };

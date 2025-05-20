@@ -11,9 +11,9 @@ import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
 
 const pages = [
-  { label: "Conversión de Imágenes", path: "/imgConv" },
-  { label: "Conversión de Videos", path: "/vidConv" },
-  { label: "Tutorial", path: "/tutorial" },
+  { label: "Conversión de Imágenes", path: "/logIn" },
+  { label: "Conversión de Videos", path: "/logIn" },
+  { label: "Tutorial", path: "/logIn" },
 ];
 
 function DataNavbar() {
@@ -28,6 +28,7 @@ function DataNavbar() {
 
   return (
     <AppBar
+      className="dataNavBar"
       position="fixed"
       sx={{ top: 0, left: 0, right: 0, backgroundColor: "blueviolet" }}
     >

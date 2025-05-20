@@ -18,7 +18,7 @@ const pages = [
   { label: "Tutorial", path: "/tutorial" },
 ];
 const settings = [
-  { label: "Historial", path: "/perfilUsuario" },
+  { label: "Historial", path: "/perfil" },
   { label: "Cerrar Sesión", path: "/" },
 ];
 

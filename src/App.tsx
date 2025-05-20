@@ -13,7 +13,6 @@ import Register from "./pages/Register";
 function App() {
   return (
     <Router>
-      <NavBar />
       <div style={{ paddingTop: "64px" }}>
         <Routes>
           <Route path="/register" element={<Register />} />
@@ -23,7 +22,7 @@ function App() {
           <Route path="/imgConv" element={<ConvImages />} />
           <Route path="/afterLogin" element={<AfterLogIn />} />
           <Route path="/tutorial" element={<Tutorial />} />
-          <Route path="/perfilUsuario" element={<Perfil />} />
+          <Route path="/perfil" element={<Perfil />} />
         </Routes>
       </div>
     </Router>

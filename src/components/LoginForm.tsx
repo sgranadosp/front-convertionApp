@@ -57,7 +57,7 @@ const LoginForm = () => {
       <Card
         title="Inicio de Sesión"
         subTitle="¡Ingresa tus datos y disfruta de nuestros servicios!"
-        className="md:w-25rem custom-login-card"
+        className="md:w-25rem custom-login-card animate__animated animate__rotateIn"
         style={{
           border: "2px solid #673AB7",
           borderRadius: "10px",
