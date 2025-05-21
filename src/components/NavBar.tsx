@@ -56,7 +56,7 @@ function NavBar() {
             cursor: "pointer",
             paddingBottom: "none",
           }}
-          onClick={() => navigate("/")} // aquí rediriges a la página deseada
+          onClick={() => navigate("/afterLogin")} // aquí rediriges a la página deseada
         >
           <img
             src="/LogoEasyConv.png"
@@ -67,19 +67,19 @@ function NavBar() {
               marginLeft: "none",
               cursor: "pointer",
             }}
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/afterLogin")}
           />
         </Box>
         <Box
           sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/afterLogin")}
         >
           <IconButton
             size="large"
             aria-label="account of current user"
             aria-controls="menu-appbar"
             aria-haspopup="true"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/afterLogin")}
             color="inherit"
           >
             <MenuIcon />

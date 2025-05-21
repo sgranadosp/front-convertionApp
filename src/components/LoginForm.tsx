@@ -8,6 +8,7 @@ import { Card } from "primereact/card";
 import "./LoginForm.css";
 import LinkTextButton from "./LinkTextButton";
 import { loginUser } from "../services/login.service";
+import "./LoginForm.css";
 
 const loginSchema = z.object({
   correo: z
@@ -57,7 +58,7 @@ const LoginForm = () => {
       <Card
         title="Inicio de Sesión"
         subTitle="¡Ingresa tus datos y disfruta de nuestros servicios!"
-        className="md:w-25rem custom-login-card animate__animated animate__rotateIn"
+        className="md:w-25rem custom-login-card animate__animated animate__bounceIn fondo-formulario"
         style={{
           border: "2px solid #673AB7",
           borderRadius: "10px",
@@ -67,13 +68,16 @@ const LoginForm = () => {
       >
         <form onSubmit={handleSubmit(onSubmit)}>
           <Box
-            component="form"
-            onSubmit={handleSubmit(onSubmit)}
-            sx={{ "& > :not(style)": { m: 1, width: "40ch" } }}
-            noValidate
-            autoComplete="off"
+            component="div"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+              width: "100%",
+            }}
           >
             <TextField
+              fullWidth
               {...register("correo")}
               label="Correo Electrónico"
               variant="outlined"
@@ -84,6 +88,7 @@ const LoginForm = () => {
               error={!!errors.correo}
             />
             <TextField
+              fullWidth
               {...register("contrasenia")}
               label="Contraseña"
               type="password"

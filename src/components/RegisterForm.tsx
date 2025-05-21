@@ -68,12 +68,16 @@ const RegisterForm = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-3">
               <Box
-                component="form"
-                sx={{ "& > :not(style)": { m: 1, width: "40ch" } }}
-                noValidate
-                autoComplete="off"
+                component="div"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                  width: "100%",
+                }}
               >
                 <TextField
+                  fullWidth
                   {...register("username")}
                   id="outlined-basic"
                   label="Nombre de Usuario"
@@ -88,6 +92,7 @@ const RegisterForm = () => {
                 )}
 
                 <TextField
+                  fullWidth
                   {...register("correo", { required: true })}
                   id="outlined-basic"
                   label="Correo Electrónico"
@@ -102,6 +107,7 @@ const RegisterForm = () => {
                 )}
 
                 <TextField
+                  fullWidth
                   {...register("password", { required: true })}
                   id="outlined-basic"
                   label="Contraseña"
@@ -135,7 +141,7 @@ const RegisterForm = () => {
                 {" "}
                 Condiciones del Servicio y Política de Privacidad{" "}
               </LinkTextButton>{" "}
-              de FreeConv
+              de EasyConv
             </p>
           </form>
         </Card>

@@ -1,6 +1,6 @@
 import React from "react";
-import "./homeForm.css";
 import "animate.css";
+import "./AfterLoginForm.css";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -55,26 +55,48 @@ export const ToolCard: React.FC<ToolCardProps> = ({
   );
 };
 
-const HomeForm = () => {
+const AfterLoginForm = () => {
   const navigate = useNavigate();
-  const tools = [
-    {
-      title: "De PNG a JPG",
-      subtitle: "Convierte tu imagen PNG a JPG",
-      icon: faFileImage,
-      iconClass: "icon-blue",
-    },
+
+  const toolsUp = [
     {
       title: "De MP3 a MP4",
       subtitle: "Convierte tu archivo MP3 a MP4",
       icon: faFileVideo,
+      iconClass: "icon-blue",
+    },
+    {
+      title: "De MP4 a MPG",
+      subtitle: "Convierte tu video MP4 a MPG",
+      icon: faFileVideo,
       iconClass: "icon-orange",
+    },
+    {
+      title: "De MOV a MP4",
+      subtitle: "Convierte tu video MOV a MP4",
+      icon: faFileVideo,
+      iconClass: "icon-purple",
+    },
+  ];
+
+  const toolsDown = [
+    {
+      title: "De PNG a JPG",
+      subtitle: "Convierte tu imagen PNG a JPG",
+      icon: faFileImage,
+      iconClass: "icon-purple",
+    },
+    {
+      title: "De JPEG a PNG",
+      subtitle: "Convierte tu imagen JPEG a PNG",
+      icon: faFileImage,
+      iconClass: "icon-blue",
     },
     {
       title: "De JPG a PDF",
       subtitle: "Convierte tu imagen JPG a PDF",
       icon: faFilePdf,
-      iconClass: "icon-purple",
+      iconClass: "icon-orange",
     },
   ];
 
@@ -83,24 +105,35 @@ const HomeForm = () => {
       <div className="home-container">
         <section className="hero-section">
           <h1 className="animate__animated animate__tada titulo-principal">
-            ¡Bienvenido a EasyConv!
+            ¡Gracias por registrarte!
           </h1>
           <p className="subtitle">
-            Tu plataforma online para convertir imágenes y videos sin enredos.
-            Pasa de JPG a PDF, de PNG a JPG o de MP4 a otros formatos con
-            herramientas rápidas, intuitivas y 100% gratuitas.
+            Disfruta sin límites de todos nuestros servicios de conversión de
+            formato de imágenes y videos. ¡El límite lo pones tú!
           </p>
         </section>
 
         <div className="tools-grid">
-          {tools.map((tool, index) => (
+          {toolsUp.map((tool, index) => (
             <ToolCard
               key={index}
               title={tool.title}
               subtitle={tool.subtitle}
               icon={tool.icon}
               iconClass={tool.iconClass}
-              onClick={() => navigate("/LogIn")}
+              onClick={() => navigate("/vidConv")}
+            />
+          ))}
+        </div>
+        <div className="tools-grid">
+          {toolsDown.map((tool, index) => (
+            <ToolCard
+              key={index}
+              title={tool.title}
+              subtitle={tool.subtitle}
+              icon={tool.icon}
+              iconClass={tool.iconClass}
+              onClick={() => navigate("/imgConv")}
             />
           ))}
         </div>
@@ -108,43 +141,22 @@ const HomeForm = () => {
       <div className="more-tools-container animate__animated animate__shakeX">
         <button
           className="secondary-button faarrowpointer"
-          onClick={() => navigate("/LogIn")}
+          onClick={() => navigate("/imgConv")}
         >
-          Click para más herramientas <FontAwesomeIcon icon={faArrowPointer} />
+          Conversión de imágenes <FontAwesomeIcon icon={faArrowPointer} />
+        </button>
+        <br></br>
+        <br></br>
+        <button
+          className="secondary-button faarrowpointer"
+          onClick={() => navigate("/vidConv")}
+        >
+          Conversión de videos <FontAwesomeIcon icon={faArrowPointer} />
         </button>
       </div>
-      <div className="historia">
-        <h2 className="titulo-historia">Nuestra Historia</h2>
-        <p>
-          Somos cuatro estudiantes de tercer semestre de Ingeniería de Sistemas,
-          apasionados por la tecnología y el desarrollo de software. Durante el
-          proceso de creación de esta aplicación, dos de nosotros nos enfocamos
-          en el desarrollo del BackEnd, asegurando que toda la lógica y
-          funcionamiento interno de la página sean robustos y eficientes,
-          mientras que los otros dos nos encargamos del desarrollo del FrontEnd,
-          para ofrecer así, una experiencia intuitiva y amigable a los usuarios.
-          La idea de esta app surgió de una necesidad personal, la cual fue:
-          convertir el formato de archivos de imágen y video de manera fácil,
-          rápida y completamente gratuita. Queríamos crear una herramienta
-          accesible para todos, sin complicaciones ni costos adicionales.
-          Además, esta experiencia nos ha permitido crecer como equipo y como
-          profesionales, enfrentando retos y aprendiendo a colaborar de forma
-          efectiva.
-        </p>
-        <p>
-          Nos llena de orgullo saber que lo que hemos desarrollado no solo nos
-          facilita la vida a nosotros, sino que también puede ayudar a muchas
-          otras personas a resolver sus problemas de conversión de archivos de
-          forma práctica. Este proyecto es el reflejo de nuestro compromiso y
-          pasión por la tecnología, y estamos emocionados por seguir mejorándolo
-          y expandiendo sus funcionalidades en el futuro.
-        </p>
-        <img
-          src="LogoEasyConvMorado.png"
-          alt="Logo de EasyConv"
-          className="logo-principal"
-        />
-      </div>
+
+      <br></br>
+      <br></br>
       <section className="nuestro-equipo">
         <h2>Nuestro Equipo</h2>
         <p>
@@ -211,4 +223,4 @@ const HomeForm = () => {
   );
 };
 
-export default HomeForm;
+export default AfterLoginForm;

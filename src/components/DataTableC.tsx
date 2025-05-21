@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { convertionUserData } from "../services/historial.service";
+import "./DataTableC.css";
 
 interface ConvertionData {
   tipo: string;
@@ -28,7 +29,12 @@ const DataTableC = () => {
 
   return (
     <div className="card">
-      <DataTable value={convertions} tableStyle={{ minWidth: "50rem" }}>
+      <DataTable
+        value={convertions}
+        showGridlines
+        responsiveLayout="scroll"
+        className="custom-datatable animate__animated animate__zoomIn"
+      >
         <Column field="tipo" header="Tipo de Archivo" />
         <Column field="nombre" header="Nombre" />
         <Column field="tipoArchivoOriginal" header="Formato Original" />

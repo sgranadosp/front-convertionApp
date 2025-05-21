@@ -173,6 +173,7 @@ const FileUploaderVid: React.FC = () => {
       <Tooltip target=".custom-cancel-btn" content="Borrar" position="bottom" />
 
       <FileUpload
+        className="animate__animated animate__slideInUp"
         ref={fileUploadRef}
         name="demo[]"
         url="/api/upload"

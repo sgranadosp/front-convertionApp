@@ -1,0 +1,13 @@
+.custom-datatable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-datatable .p-datatable-thead > tr > th,
+  .custom-datatable .p-datatable-tbody > tr > td {
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}

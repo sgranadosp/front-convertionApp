@@ -28,7 +28,7 @@ function DataNavbar() {
 
   return (
     <AppBar
-      className="dataNavBar"
+      className="dataNavBar navBar-border"
       position="fixed"
       sx={{ top: 0, left: 0, right: 0, backgroundColor: "blueviolet" }}
     >
@@ -45,9 +45,9 @@ function DataNavbar() {
           <img
             src="/LogoEasyConv.png"
             style={{
-              height: "62px",
-              width: "62px",
-              marginRight: "15px",
+              height: "75px",
+              width: "80px",
+              marginRight: "30px",
               marginLeft: "none",
               cursor: "pointer",
             }}
@@ -68,7 +68,7 @@ function DataNavbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Menu
+          <Menu //Botones del navbar
             id="menu-appbar"
             anchorEl={anchorElNav}
             anchorOrigin={{

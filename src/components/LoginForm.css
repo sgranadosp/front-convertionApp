@@ -44,9 +44,23 @@
   border-color: black;
   cursor: pointer;
 }
+
+.fondo-formulario {
+    background-color: white;
+}
+
 /* Responsividad para móviles */
 @media screen and (max-width: 480px) {
-  .custom-login-card {
-    width: 90% !important;
+  .custom-register-card {
+    width: 95% !important;
+    padding: 1rem !important;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .custom-register-card button {
+    width: 100%;
   }
 }
