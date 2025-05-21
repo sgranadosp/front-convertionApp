@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+
+// Componentes de PrimeReact
 import { Toast } from "primereact/toast";
 import { FileUpload } from "primereact/fileupload";
 import type {
@@ -12,11 +14,13 @@ import { Button } from "primereact/button";
 import { Tooltip } from "primereact/tooltip";
 import { Tag } from "primereact/tag";
 
+// Componente funcional para la carga de imágenes
 const FileUploaderImg: React.FC = () => {
-  const toast = useRef<Toast>(null);
-  const [totalSize, setTotalSize] = useState(0);
-  const fileUploadRef = useRef<FileUpload>(null);
+  const toast = useRef<Toast>(null); // Referencia al componente Toast para mostrar mensajes
+  const [totalSize, setTotalSize] = useState(0); // Estado para llevar el total de tamaño de archivos seleccionados
+  const fileUploadRef = useRef<FileUpload>(null); // Referencia al componente FileUpload
 
+  // Maneja el evento cuando se seleccionan archivos
   const onTemplateSelect = (e: FileUploadSelectEvent) => {
     let _totalSize = totalSize;
     let files = e.files;
@@ -25,9 +29,10 @@ const FileUploaderImg: React.FC = () => {
       _totalSize += files[i].size || 0;
     }
 
-    setTotalSize(_totalSize);
+    setTotalSize(_totalSize); // Actualiza el total acumulado
   };
 
+  // Maneja el evento cuando los archivos han sido subidos exitosamente
   const onTemplateUpload = (e: FileUploadUploadEvent) => {
     let _totalSize = 0;
 
@@ -43,11 +48,13 @@ const FileUploaderImg: React.FC = () => {
     });
   };
 
+  // Elimina un archivo de la lista
   const onTemplateRemove = (file: File, callback: Function) => {
     setTotalSize(totalSize - file.size);
-    callback();
+    callback(); // Llama al callback de eliminación de PrimeReact
   };
 
+  // Limpia todos los archivos seleccionados
   const onTemplateClear = () => {
     setTotalSize(0);
     toast.current?.show({
@@ -57,9 +64,10 @@ const FileUploaderImg: React.FC = () => {
     });
   };
 
+  // Cabecera personalizada del componente FileUpload
   const headerTemplate = (options: FileUploadHeaderTemplateOptions) => {
     const { className, chooseButton, uploadButton, cancelButton } = options;
-    const value = totalSize / 10000;
+    const value = totalSize / 10000; // Valor de la barra de progreso
     const formatedValue =
       fileUploadRef && fileUploadRef.current
         ? fileUploadRef.current.formatSize(totalSize)
@@ -83,12 +91,13 @@ const FileUploaderImg: React.FC = () => {
             value={value}
             showValue={false}
             style={{ width: "10rem", height: "12px" }}
-          ></ProgressBar>
+          />
         </div>
       </div>
     );
   };
 
+  // Plantilla personalizada para renderizar cada archivo cargado
   const itemTemplate = (inFile: object, props: ItemTemplateOptions) => {
     const file = inFile as File;
     return (
@@ -120,6 +129,7 @@ const FileUploaderImg: React.FC = () => {
     );
   };
 
+  // Plantilla para mostrar cuando no hay archivos cargados
   const emptyTemplate = () => {
     return (
       <div className="flex align-items-center flex-column">
@@ -142,6 +152,7 @@ const FileUploaderImg: React.FC = () => {
     );
   };
 
+  // Opciones personalizadas para los botones de FileUpload
   const chooseOptions = {
     icon: "pi pi-fw pi-images",
     iconOnly: true,
@@ -162,8 +173,10 @@ const FileUploaderImg: React.FC = () => {
 
   return (
     <div>
-      <Toast ref={toast}></Toast>
+      {/* Componente Toast para mostrar mensajes flotantes */}
+      <Toast ref={toast} />
 
+      {/* Tooltips para los botones de acción */}
       <Tooltip
         target=".custom-choose-btn"
         content="Seleccionar"
@@ -172,14 +185,15 @@ const FileUploaderImg: React.FC = () => {
       <Tooltip target=".custom-upload-btn" content="Subir" position="bottom" />
       <Tooltip target=".custom-cancel-btn" content="Borrar" position="bottom" />
 
+      {/* Componente FileUpload de PrimeReact con templates personalizados */}
       <FileUpload
         className="animate__animated animate__slideInUp"
         ref={fileUploadRef}
         name="demo[]"
-        url="/api/upload"
+        url="/api/upload" // URL de destino para la carga (ajustable según tu backend)
         multiple
-        accept="image/*"
-        maxFileSize={10000000}
+        accept="image/*" // Solo acepta imágenes
+        maxFileSize={10000000} // Límite de 10 MB
         onUpload={onTemplateUpload}
         onSelect={onTemplateSelect}
         onError={onTemplateClear}

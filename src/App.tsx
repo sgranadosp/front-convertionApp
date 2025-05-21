@@ -4,7 +4,7 @@ import LogIn from "./pages/LogIn";
 import Tutorial from "./pages/Tutorial";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import Perfil from "./pages/Perfil";
+import Historial from "./pages/Historial";
 import AfterLogIn from "./pages/AfterLogIn";
 import ConvImages from "./pages/ConvImages";
 import ConvVideos from "./pages/ConvVideos";
@@ -22,7 +22,7 @@ function App() {
           <Route path="/imgConv" element={<ConvImages />} />
           <Route path="/afterLogin" element={<AfterLogIn />} />
           <Route path="/tutorial" element={<Tutorial />} />
-          <Route path="/perfil" element={<Perfil />} />
+          <Route path="/historial" element={<Historial />} />
         </Routes>
       </div>
     </Router>

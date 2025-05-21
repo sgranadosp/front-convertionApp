@@ -2,6 +2,8 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import PrimeReactWrapper from "../PrimeReactWrapper";
 import FileUploaderVid from "../components/FileUploaderVid";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ConvVideos = () => {
   return (
@@ -39,26 +41,36 @@ const ConvVideos = () => {
       <footer className="simple-footer">
         <div className="footer-sections">
           <div>
-            <h4>EasyConv</h4>
+            <h4>Redes</h4>
             <ul>
-              <li>Inicio</li>
-              <li>Herramientas</li>
-              <li>Preguntas frecuentes</li>
+              <li>¡Conoce más de nosotros en redes!</li>
+              <p>
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  style={{ color: "#e53e70", marginRight: "8px" }}
+                />
+                <a
+                  href="https://www.instagram.com/easyconv/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  EasyConv
+                </a>
+              </p>
             </ul>
           </div>
           <div>
-            <h4>Proyecto</h4>
+            <h4>Sobre este proyecto</h4>
             <ul>
-              <li>Materia: Desarrollo Web</li>
-              <li>Estudiantes: Grupo 4</li>
-              <li>Universidad XYZ</li>
+              <li>Creado por Estudiantes</li>
+              <li>Universidad El Bosque</li>
             </ul>
           </div>
           <div>
             <h4>Contacto</h4>
             <ul>
-              <li>easyconv@correo.com</li>
-              <li>+57 300 000 0000</li>
+              <li>easyconv1@gmail.com</li>
+              <li>+57 3125167335</li>
             </ul>
           </div>
         </div>

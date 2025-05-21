@@ -18,7 +18,7 @@ const pages = [
   { label: "Tutorial", path: "/tutorial" },
 ];
 const settings = [
-  { label: "Historial", path: "/perfil" },
+  { label: "Historial", path: "/historial" },
   { label: "Cerrar Sesión", path: "/" },
 ];
 
@@ -61,8 +61,8 @@ function NavBar() {
           <img
             src="/LogoEasyConv.png"
             style={{
-              height: "62px",
-              width: "62px",
+              height: "75px",
+              width: "80px",
               marginRight: "15px",
               marginLeft: "none",
               cursor: "pointer",

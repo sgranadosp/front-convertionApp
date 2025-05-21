@@ -10,16 +10,35 @@ import {
   faFileVideo,
   faArrowPointer,
 } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
+/**
+ * Props que recibe el componente ToolCard.
+ */
 interface ToolCardProps {
+  /** Título principal de la tarjeta (ej. "De MP3 a MP4") */
   title: string;
+
+  /** Subtítulo descriptivo de la función de la herramienta */
   subtitle: string;
+
+  /** Ícono que se mostrará en la tarjeta (FontAwesome) */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
+
+  /** Clase CSS adicional para estilizar el ícono */
   iconClass?: string;
+
+  /** Función que se ejecuta al hacer clic en el botón */
   onClick?: () => void;
 }
 
+/**
+ * Componente reutilizable que representa una tarjeta con una herramienta de conversión.
+ *
+ * @param props - Propiedades de la tarjeta, incluyendo título, ícono y acción al hacer clic
+ * @returns JSX.Element
+ */
 export const ToolCard: React.FC<ToolCardProps> = ({
   title,
   subtitle,
@@ -55,9 +74,16 @@ export const ToolCard: React.FC<ToolCardProps> = ({
   );
 };
 
+/**
+ * Componente principal mostrado después del registro de un usuario.
+ * Ofrece herramientas de conversión de formato y muestra información del equipo.
+ *
+ * @returns JSX.Element
+ */
 const AfterLoginForm = () => {
   const navigate = useNavigate();
 
+  // Lista de herramientas de conversión de video
   const toolsUp = [
     {
       title: "De MP3 a MP4",
@@ -79,6 +105,7 @@ const AfterLoginForm = () => {
     },
   ];
 
+  // Lista de herramientas de conversión de imagen
   const toolsDown = [
     {
       title: "De PNG a JPG",
@@ -102,6 +129,7 @@ const AfterLoginForm = () => {
 
   return (
     <>
+      {/* Sección de bienvenida */}
       <div className="home-container">
         <section className="hero-section">
           <h1 className="animate__animated animate__tada titulo-principal">
@@ -113,6 +141,7 @@ const AfterLoginForm = () => {
           </p>
         </section>
 
+        {/* Herramientas de video */}
         <div className="tools-grid">
           {toolsUp.map((tool, index) => (
             <ToolCard
@@ -125,6 +154,8 @@ const AfterLoginForm = () => {
             />
           ))}
         </div>
+
+        {/* Herramientas de imagen */}
         <div className="tools-grid">
           {toolsDown.map((tool, index) => (
             <ToolCard
@@ -138,6 +169,8 @@ const AfterLoginForm = () => {
           ))}
         </div>
       </div>
+
+      {/* Botones extra de navegación */}
       <div className="more-tools-container animate__animated animate__shakeX">
         <button
           className="secondary-button faarrowpointer"
@@ -145,8 +178,8 @@ const AfterLoginForm = () => {
         >
           Conversión de imágenes <FontAwesomeIcon icon={faArrowPointer} />
         </button>
-        <br></br>
-        <br></br>
+        <br />
+        <br />
         <button
           className="secondary-button faarrowpointer"
           onClick={() => navigate("/vidConv")}
@@ -155,8 +188,10 @@ const AfterLoginForm = () => {
         </button>
       </div>
 
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+
+      {/* Sección del equipo */}
       <section className="nuestro-equipo">
         <h2>Nuestro Equipo</h2>
         <p>
@@ -189,29 +224,40 @@ const AfterLoginForm = () => {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="simple-footer">
         <div className="footer-sections">
           <div>
-            <h4>EasyConv</h4>
+            <h4>Redes</h4>
             <ul>
-              <li>Inicio</li>
-              <li>Herramientas</li>
-              <li>Preguntas frecuentes</li>
+              <li>¡Conoce más de nosotros en redes!</li>
+              <p>
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  style={{ color: "#e53e70", marginRight: "8px" }}
+                />
+                <a
+                  href="https://www.instagram.com/easyconv/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  EasyConv
+                </a>
+              </p>
             </ul>
           </div>
           <div>
-            <h4>Proyecto</h4>
+            <h4>Sobre este proyecto</h4>
             <ul>
-              <li>Materia: Desarrollo Web</li>
-              <li>Estudiantes: Grupo 4</li>
-              <li>Universidad XYZ</li>
+              <li>Creado por Estudiantes</li>
+              <li>Universidad El Bosque</li>
             </ul>
           </div>
           <div>
             <h4>Contacto</h4>
             <ul>
-              <li>easyconv@correo.com</li>
-              <li>+57 300 000 0000</li>
+              <li>easyconv1@gmail.com</li>
+              <li>+57 3125167335</li>
             </ul>
           </div>
         </div>

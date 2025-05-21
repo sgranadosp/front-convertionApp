@@ -1,22 +1,30 @@
+// Importación de React y hooks necesarios
 import React, { useRef, useState } from "react";
+// Componentes de PrimeReact necesarios para la carga de archivos y su presentación
 import { Toast } from "primereact/toast";
 import { FileUpload } from "primereact/fileupload";
+// Tipos específicos para los eventos y opciones del componente FileUpload
 import type {
   FileUploadHeaderTemplateOptions,
   FileUploadSelectEvent,
   FileUploadUploadEvent,
   ItemTemplateOptions,
 } from "primereact/fileupload";
+// Componentes adicionales para UI
 import { ProgressBar } from "primereact/progressbar";
 import { Button } from "primereact/button";
 import { Tooltip } from "primereact/tooltip";
 import { Tag } from "primereact/tag";
 
+// Componente funcional principal para la carga de videos
 const FileUploaderVid: React.FC = () => {
-  const toast = useRef<Toast>(null);
-  const [totalSize, setTotalSize] = useState(0);
-  const fileUploadRef = useRef<FileUpload>(null);
+  const toast = useRef<Toast>(null); // Referencia al componente Toast para notificaciones
+  const [totalSize, setTotalSize] = useState(0); // Estado que almacena el tamaño total de los archivos seleccionados
+  const fileUploadRef = useRef<FileUpload>(null); // Referencia al componente FileUpload para acceso a sus métodos
 
+  /**
+   * Maneja el evento de selección de archivos, sumando el tamaño total
+   */
   const onTemplateSelect = (e: FileUploadSelectEvent) => {
     let _totalSize = totalSize;
     let files = e.files;
@@ -28,6 +36,9 @@ const FileUploaderVid: React.FC = () => {
     setTotalSize(_totalSize);
   };
 
+  /**
+   * Maneja el evento de subida de archivos, actualiza el estado y muestra notificación
+   */
   const onTemplateUpload = (e: FileUploadUploadEvent) => {
     let _totalSize = 0;
 
@@ -43,11 +54,17 @@ const FileUploaderVid: React.FC = () => {
     });
   };
 
+  /**
+   * Maneja la eliminación de un archivo individual desde la lista
+   */
   const onTemplateRemove = (file: File, callback: Function) => {
     setTotalSize(totalSize - file.size);
     callback();
   };
 
+  /**
+   * Maneja el evento de limpieza de todos los archivos seleccionados
+   */
   const onTemplateClear = () => {
     setTotalSize(0);
     toast.current?.show({
@@ -57,6 +74,9 @@ const FileUploaderVid: React.FC = () => {
     });
   };
 
+  /**
+   * Renderiza la cabecera personalizada del componente FileUpload
+   */
   const headerTemplate = (options: FileUploadHeaderTemplateOptions) => {
     const { className, chooseButton, uploadButton, cancelButton } = options;
     const value = totalSize / 1000000;
@@ -89,6 +109,9 @@ const FileUploaderVid: React.FC = () => {
     );
   };
 
+  /**
+   * Renderiza cada archivo individual como un elemento con su respectivo preview y botones
+   */
   const itemTemplate = (inFile: object, props: ItemTemplateOptions) => {
     const file = inFile as File;
     return (
@@ -120,6 +143,9 @@ const FileUploaderVid: React.FC = () => {
     );
   };
 
+  /**
+   * Template mostrado cuando no hay archivos seleccionados
+   */
   const emptyTemplate = () => {
     return (
       <div className="flex align-items-center flex-column">
@@ -142,6 +168,7 @@ const FileUploaderVid: React.FC = () => {
     );
   };
 
+  // Configuración visual de los botones personalizados
   const chooseOptions = {
     icon: "pi pi-fw pi-images",
     iconOnly: true,
@@ -160,6 +187,9 @@ const FileUploaderVid: React.FC = () => {
       "custom-cancel-btn p-button-danger p-button-rounded p-button-outlined",
   };
 
+  /**
+   * Render principal del componente, incluye Toast, Tooltips y FileUpload con todas las plantillas
+   */
   return (
     <div>
       <Toast ref={toast}></Toast>
@@ -195,4 +225,5 @@ const FileUploaderVid: React.FC = () => {
   );
 };
 
+// Exportación del componente
 export default FileUploaderVid;

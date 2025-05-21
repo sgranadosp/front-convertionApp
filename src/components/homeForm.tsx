@@ -1,8 +1,11 @@
+// Importaciones principales de React y librerías de estilo/animación
 import React from "react";
-import "./homeForm.css";
-import "animate.css";
-import { motion } from "framer-motion";
+import "./homeForm.css"; // Estilos específicos para este componente
+import "animate.css"; // Librería de animaciones CSS
+import { motion } from "framer-motion"; // Animaciones declarativas para React
+// Navegación entre rutas (React Router)
 import { useNavigate } from "react-router-dom";
+// Íconos de FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFileImage,
@@ -10,16 +13,21 @@ import {
   faFileVideo,
   faArrowPointer,
 } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
+// Tipado de propiedades que recibirá el componente ToolCard
 interface ToolCardProps {
-  title: string;
-  subtitle: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon: any;
-  iconClass?: string;
-  onClick?: () => void;
+  title: string; // Título de la herramienta
+  subtitle: string; // Descripción corta
+  icon: any; // Icono de FontAwesome
+  iconClass?: string; // Clase CSS para el icono (color)
+  onClick?: () => void; // Acción al hacer clic en "Usar herramienta"
 }
 
+/**
+ * Componente reutilizable que representa una tarjeta de herramienta
+ * con animación y botón para redireccionar al uso de la herramienta.
+ */
 export const ToolCard: React.FC<ToolCardProps> = ({
   title,
   subtitle,
@@ -55,8 +63,13 @@ export const ToolCard: React.FC<ToolCardProps> = ({
   );
 };
 
+/**
+ * Componente principal de la página de inicio de EasyConv.
+ * Contiene la bienvenida, herramientas disponibles, historia del proyecto, equipo y footer.
+ */
 const HomeForm = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //Hook para redireccionamiento
+  // Lista de herramientas disponibles que se renderizan como ToolCard
   const tools = [
     {
       title: "De PNG a JPG",
@@ -80,6 +93,7 @@ const HomeForm = () => {
 
   return (
     <>
+      {/* Sección principal de bienvenida */}
       <div className="home-container">
         <section className="hero-section">
           <h1 className="animate__animated animate__tada titulo-principal">
@@ -92,6 +106,7 @@ const HomeForm = () => {
           </p>
         </section>
 
+        {/* Grid de herramientas (tarjetas) */}
         <div className="tools-grid">
           {tools.map((tool, index) => (
             <ToolCard
@@ -105,6 +120,7 @@ const HomeForm = () => {
           ))}
         </div>
       </div>
+      {/* Botón de acceso a más herramientas */}
       <div className="more-tools-container animate__animated animate__shakeX">
         <button
           className="secondary-button faarrowpointer"
@@ -113,6 +129,7 @@ const HomeForm = () => {
           Click para más herramientas <FontAwesomeIcon icon={faArrowPointer} />
         </button>
       </div>
+      {/* Sección "Nuestra Historia" */}
       <div className="historia">
         <h2 className="titulo-historia">Nuestra Historia</h2>
         <p>
@@ -145,6 +162,7 @@ const HomeForm = () => {
           className="logo-principal"
         />
       </div>
+      {/* Sección del equipo */}
       <section className="nuestro-equipo">
         <h2>Nuestro Equipo</h2>
         <p>
@@ -177,29 +195,40 @@ const HomeForm = () => {
         </div>
       </section>
 
+      {/* Pie de página con información adicional */}
       <footer className="simple-footer">
         <div className="footer-sections">
           <div>
-            <h4>EasyConv</h4>
+            <h4>Redes</h4>
             <ul>
-              <li>Inicio</li>
-              <li>Herramientas</li>
-              <li>Preguntas frecuentes</li>
+              <li>¡Conoce más de nosotros en redes!</li>
+              <p>
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  style={{ color: "#e53e70", marginRight: "8px" }}
+                />
+                <a
+                  href="https://www.instagram.com/easyconv/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  EasyConv
+                </a>
+              </p>
             </ul>
           </div>
           <div>
-            <h4>Proyecto</h4>
+            <h4>Sobre este proyecto</h4>
             <ul>
-              <li>Materia: Desarrollo Web</li>
-              <li>Estudiantes: Grupo 4</li>
-              <li>Universidad XYZ</li>
+              <li>Creado por Estudiantes</li>
+              <li>Universidad El Bosque</li>
             </ul>
           </div>
           <div>
             <h4>Contacto</h4>
             <ul>
-              <li>easyconv@correo.com</li>
-              <li>+57 300 000 0000</li>
+              <li>easyconv1@gmail.com</li>
+              <li>+57 3125167335</li>
             </ul>
           </div>
         </div>
@@ -211,4 +240,5 @@ const HomeForm = () => {
   );
 };
 
+// Exportación del componente principal
 export default HomeForm;
