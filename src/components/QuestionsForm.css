@@ -1,3 +1,62 @@
+/*
+.faq-section
+- Contenedor principal de la sección de preguntas frecuentes.
+- Máximo ancho de 700px para limitar su extensión.
+- Márgenes automáticos horizontales para centrar en la página.
+- Margen superior de 60px para separación con elementos anteriores.
+- Padding horizontal de 20px para espacio interno.
+- Fuente: 'Segoe UI', sans-serif para legibilidad.
+
+.faq-section h2
+- Título principal dentro de la sección FAQ.
+- Texto centrado y margen inferior amplio para separar del contenido.
+- Color gris oscuro (#222) para buena visibilidad.
+- Tamaño de fuente grande (28px).
+- Línea inferior (border-bottom) ligera para estilo visual.
+- Padding inferior para separar texto de la línea.
+
+.faq-item
+- Contenedor individual para cada pregunta y respuesta.
+- Bordes redondeados (12px) para estética moderna.
+- Fondo blanco para contraste con la página.
+- Sombra sutil para dar profundidad (ligero sombreado).
+- Margen inferior para separación entre ítems.
+- Overflow hidden para evitar contenido que desborde.
+- Transición suave (0.3s) para animaciones (hover, activa).
+
+.faq-pregunta
+- Área clickeable de la pregunta.
+- Ancho completo del contenedor padre.
+- Fondo gris claro (#f9f9f9).
+- Sin borde visible.
+- Padding amplio (20px vertical, 24px horizontal) para tamaño cómodo.
+- Fuente de tamaño medio (16px), color gris oscuro (#333), y peso semi-negrita (600).
+- Cursor pointer para indicar interactividad.
+- Flexbox para distribuir espacio entre texto y posibles íconos.
+- Alineación vertical centrada.
+- Transición para cambio suave del fondo.
+
+.faq-pregunta:hover
+- Cambia el fondo a un color morado vibrante (#7a2ad6) al pasar el mouse.
+- Mejora la experiencia visual y señal de interactividad.
+
+.faq-respuesta
+- Contenedor para el texto de respuesta.
+- Overflow hidden para ocultar contenido cuando está cerrado.
+- Altura máxima 0 para esconder la respuesta inicialmente.
+- Transición de altura para animar apertura/cierre (0.4s).
+- Padding horizontal igual a la pregunta para alineación.
+
+.faq-respuesta p
+- Párrafo dentro de la respuesta.
+- Margen vertical para espaciar el texto.
+- Fuente un poco más pequeña (15px).
+- Color gris medio (#555555) para diferenciar del título.
+
+.faq-item.activa .faq-respuesta
+- Cuando el ítem FAQ está activo (abierto), agrega padding inferior para espacio debajo del texto de la respuesta.
+*/
+
 .faq-section {
   max-width: 700px;
   margin: 60px auto;

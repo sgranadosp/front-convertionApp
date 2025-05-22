@@ -1,3 +1,19 @@
+/*
+.title-text
+- Texto principal o título.
+- Centrado horizontalmente con `text-align: center`.
+- Margen superior de 1 rem para separación del contenido anterior.
+- Fuente en negrita con `font-weight: 700` para destacar.
+
+.subtitle-text
+- Texto subtítulo o descripción secundaria.
+- Tamaño de fuente ligeramente más grande (1.2 rem) para mejor lectura.
+- Color gris medio (#7f8c8d) para un tono suave y menos dominante.
+- Ancho máximo de 800px para limitar la línea de texto y mejorar la legibilidad.
+- Centrado horizontal con márgenes automáticos (`margin: 0 auto`).
+- Altura de línea (line-height) de 1.6 para mejor espaciado vertical entre líneas.
+*/
+
 .title-text {
     text-align: center;
     margin-top: 1rem;

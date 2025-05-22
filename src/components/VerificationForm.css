@@ -1,4 +1,39 @@
+/*
+.card-verificacion
+- Contenedor principal para la tarjeta de verificación.
+- Fondo blanco para contraste limpio.
+- Bordes redondeados (12px) para suavidad visual.
+- Sombra sutil con color púrpura translúcido para profundidad.
+- Padding amplio para separar contenido interno.
+- Ancho máximo fijo para mantener tamaño consistente.
+- Texto centrado horizontalmente.
+- Margen automático para centrar la tarjeta horizontalmente con espacio superior (100px).
+- Fuente Arial o sans-serif para legibilidad.
+- Animación 'aparecer' que dura 0.5 segundos con efecto de ease-in para una entrada suave.
 
+.logo-principal
+- Imagen o logo principal dentro de la tarjeta.
+- Ancho fijo (100px), ajustable según necesidad.
+- Margen inferior para separar del siguiente elemento.
+- Display block y márgenes laterales automáticos para centrar horizontalmente la imagen.
+
+.spinner
+- Indicador de carga animado (spinner).
+- Margen automático para centrar.
+- Tamaño cuadrado (40x40 px).
+- Borde grueso (#ddd) con borde superior color púrpura (#a51bcf).
+- Borde redondeado al 50% para forma circular.
+- Animación 'girar' infinita que rota 360 grados en 1 segundo con velocidad constante.
+
+.card-verificacion h2
+- Títulos dentro de la tarjeta.
+- Color gris oscuro para buen contraste.
+- Margen inferior para separación del texto siguiente.
+
+.card-verificacion p
+- Párrafos dentro de la tarjeta.
+- Color gris medio para legibilidad suave.
+- Tamaño de fuente 16px, línea de texto con interlineado 1.5 para facilitar lectura.
 .card-verificacion {
   background-color: #ffffff;
   border-radius: 12px;
@@ -9,7 +44,7 @@
   margin: 100px auto;
   font-family: Arial, sans-serif;
   animation: aparecer 0.5s ease;
-}
+} */
 
 .logo-principal {
   width: 100px; /* O el tamaño que necesites */
@@ -40,7 +75,11 @@
   line-height: 1.5;
 }
 
+/* Animaciones */
 
+/* 'girar'
+- Rotación continua desde 0 a 360 grados.
+*/
 
 @keyframes girar {
   to {
@@ -48,6 +87,10 @@
   }
 }
 
+/* 'aparecer'
+- Transición de opacidad de 0 a 1.
+- Escala desde un 95% al 100% para efecto de zoom suave al aparecer.
+*/
 @keyframes aparecer {
   from {
     opacity: 0;

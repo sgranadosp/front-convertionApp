@@ -1,3 +1,9 @@
+/*
+.fondo-login
+- Establece el color de fondo blanco para el área de login.
+- Proporciona un fondo limpio y neutro para mejorar la legibilidad y el diseño.
+*/
+
 .fondo-login {
     background-color: white
 }

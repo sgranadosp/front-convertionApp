@@ -1,8 +1,10 @@
 import React from "react";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 const TutorialForm = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div>TutorialForm</div>
@@ -11,7 +13,7 @@ const TutorialForm = () => {
           <div>
             <h4>Redes</h4>
             <ul>
-              <li>¡Conoce más de nosotros en redes!</li>
+              <li>Conoce más de nosotros en redes</li>
               <p>
                 <FontAwesomeIcon
                   icon={faInstagram}
@@ -25,12 +27,15 @@ const TutorialForm = () => {
                   EasyConv
                 </a>
               </p>
+              <li onClick={() => navigate("/Questions")}>
+                Preguntas frecuentes
+              </li>
             </ul>
           </div>
           <div>
             <h4>Sobre este proyecto</h4>
             <ul>
-              <li>Creado por Estudiantes</li>
+              <li>Somos 4 estudiantes creando</li>
               <li>Universidad El Bosque</li>
             </ul>
           </div>

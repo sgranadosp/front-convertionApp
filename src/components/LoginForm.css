@@ -1,3 +1,53 @@
+/*
+.card-container
+- Contenedor principal tipo flexbox.
+- Centra su contenido horizontal y verticalmente.
+- La altura es el 100% de la ventana menos 64px (espacio reservado para el navbar).
+- Añade padding horizontal de 1rem.
+- Usa box-sizing: border-box para incluir padding en el tamaño total.
+
+.custom-login-card .p-card-subtitle
+- Estilo para subtítulos dentro de la tarjeta de login personalizada.
+- Tamaño de fuente 1rem.
+- Margen inferior para separación.
+- Tipografía específica (Franklin Gothic Medium, Arial Narrow, Arial, sans-serif).
+
+.custom-login-card .p-card-title
+- Estilo para título dentro de la tarjeta de login personalizada.
+- Fuente de 2rem, negrita.
+- Margen inferior pequeño.
+- Mismas fuentes que el subtítulo.
+
+.login-footer-text
+- Texto en el footer del login.
+- Fuente y tamaño consistentes con el diseño general.
+- Texto centrado y margen superior pequeño.
+
+.btn-container
+- Contenedor para botones, usa flexbox para centrar horizontalmente.
+- Margen superior para separación.
+- Usa la misma familia tipográfica que otros elementos.
+
+.custom-login-card button
+- Estilo para botones dentro de la tarjeta de login.
+- Fondo azul violeta, texto blanco.
+- Padding cómodo (0.5rem vertical, 1.5rem horizontal).
+- Sin borde visible, con borde redondeado (10px).
+- Cursor cambia a pointer para indicar clicabilidad.
+
+.fondo-formulario
+- Fondo blanco para formularios, asegurando contraste.
+
+Media Query para pantallas <= 480px (móviles)
+- .custom-register-card:
+  * Ajusta ancho al 95% (importante para sobreescribir estilos inline o externos).
+  * Añade padding de 1rem.
+- .btn-container:
+  * Cambia la dirección flex a columna para apilar botones verticalmente.
+- .custom-register-card button:
+  * Botones se expanden al 100% del contenedor para facilitar clic táctil.
+*/
+
 .card-container {
   display: flex;
   justify-content: center;

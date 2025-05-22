@@ -202,12 +202,12 @@ const AfterLoginForm = () => {
 
         <div className="equipo-grid">
           <div className="miembro">
-            <img src="perfil.png" alt="Integrante 1" className="avatar" />
+            <img src="santiago.jpg" alt="Integrante 1" className="avatar" />
             <h3>Santiago Granados</h3>
             <p>Frontend Developer</p>
           </div>
           <div className="miembro">
-            <img src="perfil.png" alt="Integrante 2" className="avatar" />
+            <img src="camila.jpg" alt="Integrante 2" className="avatar" />
             <h3>Camila Castro</h3>
             <p>Frontend Developer</p>
           </div>
@@ -230,7 +230,7 @@ const AfterLoginForm = () => {
           <div>
             <h4>Redes</h4>
             <ul>
-              <li>¡Conoce más de nosotros en redes!</li>
+              <li>Conoce más de nosotros en redes</li>
               <p>
                 <FontAwesomeIcon
                   icon={faInstagram}
@@ -244,12 +244,15 @@ const AfterLoginForm = () => {
                   EasyConv
                 </a>
               </p>
+              <li onClick={() => navigate("/Questions")}>
+                Preguntas frecuentes
+              </li>
             </ul>
           </div>
           <div>
             <h4>Sobre este proyecto</h4>
             <ul>
-              <li>Creado por Estudiantes</li>
+              <li>Somos 4 estudiantes creando</li>
               <li>Universidad El Bosque</li>
             </ul>
           </div>

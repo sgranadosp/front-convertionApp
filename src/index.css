@@ -1,3 +1,18 @@
+/*
+body {
+  padding-left: 600px;   // Agrega un espacio amplio a la izquierda del contenido (600px)
+  padding-right: 600px;  // Agrega un espacio amplio a la derecha del contenido (600px)
+  padding-top: 150px;    // Agrega espacio superior para separar del borde superior (150px)
+}
+
+html, body {
+  height: 100%;          // Asegura que el html y body ocupen el 100% de la altura de la ventana
+  margin: 0;             // Elimina margenes por defecto para evitar espacios indeseados
+  padding: 0;            // Elimina el padding por defecto; sin embargo, el padding del body definido arriba
+                         // sobrescribe este 0, por lo que la definición previa tendrá efecto
+}
+*/
+
 body {
   padding-left: 600px;
   padding-right: 600px;

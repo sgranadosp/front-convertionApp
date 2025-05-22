@@ -1,3 +1,19 @@
+/*
+.navBar
+- padding-top: none; (Nota: 'none' no es un valor válido para padding-top, podría ser '0' o eliminarse)
+- max-width: max-content; limita el ancho máximo al contenido real, evitando que se expanda demasiado.
+- background-color: blueviolet; aplica un color de fondo púrpura vibrante para destacar la barra de navegación.
+
+.custom-register-card .p-card-title
+- font-size: 3rem; aumenta el tamaño del título para hacerlo más visible y destacado.
+- font-weight: bold; pone el texto en negrita para mayor énfasis.
+- margin-bottom: 0.5rem; separa el título del siguiente elemento para mejorar el espaciado visual.
+
+.custom-register-card .p-card-subtitle
+- font-size: 1.2rem; tamaño de fuente mayor para el subtítulo, mejorando la legibilidad.
+- margin-bottom: 1.5rem; agrega espacio debajo del subtítulo para separar del contenido siguiente.
+*/
+
 .navBar {
     padding-top: none;
     max-width: max-content;

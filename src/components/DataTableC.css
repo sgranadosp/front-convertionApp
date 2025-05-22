@@ -1,3 +1,18 @@
+/*
+.custom-datatable
+
+- Define estilos para una tabla personalizada que usa PrimeReact DataTable o similar.
+- Se asegura que la tabla ocupe el 100% del ancho disponible.
+- Permite scroll horizontal automático cuando el contenido sobrepasa el ancho del contenedor (overflow-x: auto).
+
+Media Query (para pantallas menores o iguales a 768px):
+
+- Aplica estilos específicos para mejorar la visualización en dispositivos móviles o tablets.
+- Los encabezados de la tabla (.p-datatable-thead > tr > th) y las celdas (.p-datatable-tbody > tr > td):
+  * No permiten que el texto se divida en varias líneas (white-space: nowrap).
+  * Disminuyen el tamaño de la fuente a 0.85rem para mejor ajuste.
+  * Reducen el padding a 0.5rem para optimizar el espacio visual.
+*/
 .custom-datatable {
   width: 100%;
   overflow-x: auto;

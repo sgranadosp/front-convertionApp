@@ -1,3 +1,62 @@
+/*
+.card-container
+- Contenedor principal para la tarjeta.
+- Utiliza Flexbox para centrar su contenido horizontal y verticalmente.
+- La altura es el 100% de la ventana menos 64px (altura típica del navbar).
+- Padding horizontal para dejar espacio a los lados.
+- box-sizing: border-box para incluir padding dentro del ancho total.
+
+.custom-register-card .p-card-title
+- Estilo para el título dentro de una tarjeta de registro personalizada.
+- Tamaño de fuente grande (2rem).
+- Negrita.
+- Margen inferior pequeño para separación.
+- Fuente específica 'Franklin Gothic Medium', con alternativas.
+
+.custom-register-card .p-card-subtitle
+- Subtítulo dentro de la tarjeta de registro.
+- Tamaño de fuente mediano (1rem).
+- Margen inferior amplio para separar del contenido siguiente.
+- Misma familia de fuente que el título.
+
+.footer-privacy-text
+- Texto pequeño para privacidad o notas legales en el footer.
+- Tamaño de fuente pequeño (0.8rem).
+- Misma familia de fuente.
+
+.footer-cond-priv-text
+- Texto pequeño para condiciones y privacidad, con color destacado (blueviolet).
+- Tamaño de fuente igual (0.8rem).
+- Fuente y color indicados para resaltar enlaces o texto importante.
+
+.register-footer-text
+- Texto de pie de página relacionado con el registro.
+- Fuente consistente.
+- Tamaño legible (1rem).
+- Centrado y margen superior para separación.
+
+.btn-container
+- Contenedor para botones.
+- Usa Flexbox para centrar botones horizontalmente.
+- Margen superior para separar de otros elementos.
+- Fuente consistente.
+
+.custom-register-card button
+- Botones dentro de la tarjeta personalizada de registro.
+- Centran el contenido (texto/iconos) dentro del botón.
+- Fondo azul violeta (blueviolet).
+- Texto blanco para contraste.
+- Padding cómodo (0.5rem vertical, 1.5rem horizontal).
+- Sin borde visible, pero con borde redondeado (10px).
+- Cursor pointer para indicar interactividad.
+
+@media screen and (max-width: 480px)
+- Reglas responsivas para pantallas pequeñas (móviles).
+- .custom-register-card: ancho ajustado al 95% y padding aumentado para mejor usabilidad.
+- .btn-container: cambia dirección a columna para apilar botones verticalmente.
+- .custom-register-card button: botones toman ancho completo para facilitar pulsado táctil.
+*/
+
 .card-container {
   display: flex;
   justify-content: center;

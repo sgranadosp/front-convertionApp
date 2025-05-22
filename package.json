@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "set PORT=8082 && react-scripts start",
-    "dev": "vite",
+    "dev": "vite --port 8082",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

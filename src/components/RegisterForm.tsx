@@ -1,13 +1,17 @@
-import { useForm, type FieldValues } from "react-hook-form";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import { Card } from "primereact/card";
-import "./RegisterForm.css";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import LinkTextButton from "./LinkTextButton";
-import { registerUser } from "../services/register.service";
+import { useForm, type FieldValues } from "react-hook-form"; // Hook para manejar formularios
+import Box from "@mui/material/Box"; // Componente contenedor de Material UI
+import TextField from "@mui/material/TextField"; // Campo de texto de Material UI
+import { Card } from "primereact/card"; // Componente de tarjeta de PrimeReact
+import "./RegisterForm.css"; // Estilos personalizados del formulario
+import { z } from "zod"; // Librería de validación de esquemas
+import { zodResolver } from "@hookform/resolvers/zod"; // Adaptador para usar zod con react-hook-form
+import LinkTextButton from "./LinkTextButton"; // Componente de botón de navegación estilizado
+import { registerUser } from "../services/register.service"; // Servicio que hace la llamada a la API para registrar usuario
 
+/**
+ * Define las reglas para validar los campos del formulario
+ * usando Zod, como longitud mínima y formatos obligatorios.
+ */
 const userSchema = z.object({
   username: z.string().min(3, "El nombre debe contener al menos 3 letras"),
   correo: z.string().email("Formato de correo inválido"),
@@ -25,24 +29,36 @@ const userSchema = z.object({
     }),
 });
 
+// Tipado derivado del esquema de validación
 type FormData = z.infer<typeof userSchema>;
 
+/**
+ * Componente RegisterForm
+ *
+ * Renderiza un formulario de registro con validación
+ * usando react-hook-form y zod.
+ */
 const RegisterForm = () => {
+  // Inicializa useForm con zodResolver para validación automática
   const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid },
+    register, // Función para registrar los campos
+    handleSubmit, // Manejador del envío del formulario
+    formState: { errors, isValid }, // Estado de errores y validez del formulario
   } = useForm<FormData>({
-    resolver: zodResolver(userSchema),
-    mode: "onSubmit",
+    resolver: zodResolver(userSchema), // Conecta zod como validador
+    mode: "onSubmit", // Solo valida al enviar el formulario
   });
 
+  /**
+   * Función que se ejecuta al enviar el formulario exitosamente.
+   * Llama al servicio registerUser con los datos validados.
+   */
   const onSubmit = async (data: FieldValues) => {
     try {
       const response = await registerUser({
-        username: data.nombreUsuario,
+        username: data.username,
         correo: data.correo,
-        password: data.contrasenia,
+        password: data.password,
       });
       console.log("Usuario registrado:", response);
     } catch (error) {
@@ -76,6 +92,7 @@ const RegisterForm = () => {
                   width: "100%",
                 }}
               >
+                {/* Campo: Nombre de Usuario */}
                 <TextField
                   fullWidth
                   {...register("username")}
@@ -91,6 +108,7 @@ const RegisterForm = () => {
                   <p className="text-danger">{errors.username.message}</p>
                 )}
 
+                {/* Campo: Correo Electrónico */}
                 <TextField
                   fullWidth
                   {...register("correo", { required: true })}
@@ -106,6 +124,7 @@ const RegisterForm = () => {
                   <p className="text-danger">{errors.correo.message}</p>
                 )}
 
+                {/* Campo: Contraseña */}
                 <TextField
                   fullWidth
                   {...register("password", { required: true })}
@@ -122,6 +141,7 @@ const RegisterForm = () => {
                 )}
               </Box>
             </div>
+            {/* Botón de envío */}
             <div className="btn-container">
               <button
                 disabled={!isValid}
@@ -131,10 +151,12 @@ const RegisterForm = () => {
                 Registrarse
               </button>
             </div>
+            {/* Enlace a login */}
             <p className="register-footer-text">
               ¿Ya tienes una cuenta?{" "}
               <LinkTextButton to="/logIn">Accede aquí</LinkTextButton>
             </p>
+            {/* Aviso legal */}
             <p className="footer-privacy-text">
               Al crear una cuenta, aceptas las{" "}
               <LinkTextButton to="">
