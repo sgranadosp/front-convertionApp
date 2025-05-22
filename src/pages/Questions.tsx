@@ -1,7 +1,15 @@
-import QuestionsForm from '../components/QuestionsForm';
+import DataNavbar from "../components/DataNavbar";
+import QuestionsForm from "../components/QuestionsForm";
 
 const Questions = () => {
-  return <QuestionsForm />;
+  return (
+    <>
+      <div>
+        <DataNavbar />
+      </div>
+      <QuestionsForm />
+    </>
+  );
 };
 
 export default Questions;
