@@ -226,6 +226,9 @@
     margin: 0 auto 40px auto;
   }
   
+  .alineacion{
+    text-align: justify;
+  }
   .equipo-grid {
     display: flex;
     flex-wrap: wrap;
