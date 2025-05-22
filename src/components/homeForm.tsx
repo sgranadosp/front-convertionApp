@@ -4,6 +4,7 @@ import 'animate.css';
 import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import {
   faFileImage,
   faFilePdf,
@@ -110,7 +111,7 @@ const HomeForm = () => {
         </div>
         <div className="historia">
             <h2 className="titulo-historia">Nuestra Historia</h2>
-            <p>Somos cuatro estudiantes de tercer semestre de Ingeniería de Sistemas, 
+            <p className="alineacion">Somos cuatro estudiantes de tercer semestre de Ingeniería de Sistemas, 
                 apasionados por la tecnología y el desarrollo de software. 
                 Durante el proceso de creación de esta aplicación, dos de nosotros nos enfocamos en el backend, 
                 asegurando que toda la lógica y funcionamiento interno sean robustos y eficientes, 
@@ -141,12 +142,12 @@ const HomeForm = () => {
 
         <div className="equipo-grid">
             <div className="miembro">
-            <img src="perfil.png" alt="Integrante 1" className="avatar" />
+            <img src="santiago.jpg" alt="Integrante 1" className="avatar" />
             <h3>Santiago Granados</h3>
             <p>Frontend Developer</p>
             </div>
             <div className="miembro">
-            <img src="perfil.png" alt="Integrante 2" className="avatar" />
+            <img src="camila.jpg" alt="Integrante 2" className="avatar" />
             <h3>Camila Castro</h3>
             <p>Frontend Developer</p>
             </div>
@@ -166,26 +167,30 @@ const HomeForm = () => {
       <footer className="simple-footer">
         <div className="footer-sections">
           <div>
-            <h4>EasyConv</h4>
+            <h4>Redes</h4>
             <ul>
-              <li>Inicio</li>
-              <li>Herramientas</li>
-              <li>Preguntas frecuentes</li>
+              <li>Conoce más de nosotros en redes</li>
+             <p>
+              <FontAwesomeIcon icon={faInstagram} style={{ color: "#e53e70", marginRight: "8px" }} />
+              <a href="https://www.instagram.com/easyconv/" target="_blank" rel="noopener noreferrer">
+                EasyConv
+              </a>
+            </p>
+            <li onClick={() => navigate("/Questions")}>Preguntas frecuentes</li>
             </ul>
           </div>
           <div>
-            <h4>Proyecto</h4>
+            <h4>Sobre este proyecto</h4>
             <ul>
-              <li>Materia: Desarrollo Web</li>
-              <li>Estudiantes: Grupo 4</li>
-              <li>Universidad XYZ</li>
+              <li>Somos 4 estudiantes creando</li>
+              <li>Universidad El Bosque</li>
             </ul>
           </div>
           <div>
             <h4>Contacto</h4>
             <ul>
-              <li>easyconv@correo.com</li>
-              <li>+57 300 000 0000</li>
+              <li>easyconv1@gmail.com</li>
+              <li>+57 3125167335</li>
             </ul>
           </div>
         </div>
