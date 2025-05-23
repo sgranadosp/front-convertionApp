@@ -67,7 +67,7 @@ const FileUploaderImg: React.FC = () => {
   // Cabecera personalizada del componente FileUpload
   const headerTemplate = (options: FileUploadHeaderTemplateOptions) => {
     const { className, chooseButton, uploadButton, cancelButton } = options;
-    const value = totalSize / 10000; // Valor de la barra de progreso
+    const value = totalSize / 100000; // Valor de la barra de progreso
     const formatedValue =
       fileUploadRef && fileUploadRef.current
         ? fileUploadRef.current.formatSize(totalSize)
@@ -86,7 +86,7 @@ const FileUploaderImg: React.FC = () => {
         {uploadButton}
         {cancelButton}
         <div className="flex align-items-center gap-3 ml-auto">
-          <span>{formatedValue} / 1 MB</span>
+          <span>{formatedValue} / 10 MB</span>
           <ProgressBar
             value={value}
             showValue={false}

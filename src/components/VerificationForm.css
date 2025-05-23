@@ -45,7 +45,17 @@
   font-family: Arial, sans-serif;
   animation: aparecer 0.5s ease;
 } */
-
+.card-verificacion {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(164, 94, 221, 0.1);
+  padding: 30px 40px;
+  max-width: 400px;
+  text-align: center;
+  margin: 100px auto;
+  font-family: Arial, sans-serif;
+  animation: aparecer 0.5s ease;
+}
 .logo-principal {
   width: 100px; /* O el tamaño que necesites */
   margin-bottom: 10px;
