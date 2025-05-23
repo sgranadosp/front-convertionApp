@@ -36,6 +36,7 @@ import Register from "./pages/Register";
 import Verification from "./pages/Verification";
 import Questions from "./pages/Questions";
 import TutorialBefore from "./pages/TutorialBefore";
+import VerificationCode from "./pages/VerificationCode";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="/tutorial" element={<Tutorial />} />
           <Route path="/historial" element={<Historial />} />
           <Route path="/tutorialBefore" element={<TutorialBefore />} />
+          <Route path="/verificationCode" element={<VerificationCode />} />
         </Routes>
       </div>
     </Router>
