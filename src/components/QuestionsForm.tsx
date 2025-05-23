@@ -27,7 +27,7 @@ const faqs = [
   {
     pregunta: "¿Hay un límite de tamaño para los archivos?",
     respuesta:
-      "Sí, el límite para imágenes es de 10 MegaBytes y para videos 100.000 MegaBytes.",
+      "Sí, el límite para imágenes es de 10 MegaBytes y para videos 1.000.000 MegaBytes.",
   },
   {
     pregunta: "¿Cómo reporto un problema o error",

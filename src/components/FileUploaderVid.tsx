@@ -79,7 +79,7 @@ const FileUploaderVid: React.FC = () => {
    */
   const headerTemplate = (options: FileUploadHeaderTemplateOptions) => {
     const { className, chooseButton, uploadButton, cancelButton } = options;
-    const value = totalSize / 1000000;
+    const value = totalSize / 10000000; //Tamaño máximo de 1.000.000 MB
     const formatedValue =
       fileUploadRef && fileUploadRef.current
         ? fileUploadRef.current.formatSize(totalSize)
@@ -98,7 +98,7 @@ const FileUploaderVid: React.FC = () => {
         {uploadButton}
         {cancelButton}
         <div className="flex align-items-center gap-3 ml-auto">
-          <span>{formatedValue} / 100.000 MB</span>
+          <span>{formatedValue} / 1.000.000 MB</span>
           <ProgressBar
             value={value}
             showValue={false}
@@ -209,7 +209,7 @@ const FileUploaderVid: React.FC = () => {
         url="/api/upload"
         multiple
         accept="video/*"
-        maxFileSize={100000000000}
+        maxFileSize={1000000000000} //Tamaño máximo de 1.000.000 MB
         onUpload={onTemplateUpload}
         onSelect={onTemplateSelect}
         onError={onTemplateClear}
