@@ -156,15 +156,6 @@ const RegisterForm = () => {
               ¿Ya tienes una cuenta?{" "}
               <LinkTextButton to="/logIn">Accede aquí</LinkTextButton>
             </p>
-            {/* Aviso legal */}
-            <p className="footer-privacy-text">
-              Al crear una cuenta, aceptas las{" "}
-              <LinkTextButton to="">
-                {" "}
-                Condiciones del Servicio y Política de Privacidad{" "}
-              </LinkTextButton>{" "}
-              de EasyConv
-            </p>
           </form>
         </Card>
       </div>

@@ -183,12 +183,12 @@ const HomeForm = () => {
             <p>Frontend Developer</p>
           </div>
           <div className="miembro">
-            <img src="perfil.png" alt="Integrante 3" className="avatar" />
+            <img src="laura.jpg" alt="Integrante 3" className="avatar" />
             <h3>Laura Tao</h3>
             <p>Backend Developer</p>
           </div>
           <div className="miembro">
-            <img src="perfil.png" alt="Integrante 4" className="avatar" />
+            <img src="sebastian.jpg" alt="Integrante 4" className="avatar" />
             <h3>Sebastián Pérez</h3>
             <p>Backend Developer</p>
           </div>
