@@ -106,7 +106,7 @@ const LoginForm = () => {
               placeholder="Digite su correo"
               margin="dense"
               helperText={errors.correo?.message || "* Campo obligatorio"}
-              error={!!errors.correo}
+              error={Boolean(errors.correo)}
             />
             {/* Campo para la contraseña */}
             <TextField
@@ -119,7 +119,7 @@ const LoginForm = () => {
               placeholder="Digite su contraseña"
               margin="dense"
               helperText={errors.contrasenia?.message || "* Campo obligatorio"}
-              error={!!errors.contrasenia}
+              error={Boolean(errors.contrasenia)}
             />
           </Box>
 
