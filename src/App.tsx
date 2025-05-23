@@ -35,6 +35,7 @@ import ConvVideos from "./pages/ConvVideos";
 import Register from "./pages/Register";
 import Verification from "./pages/Verification";
 import Questions from "./pages/Questions";
+import TutorialBefore from "./pages/TutorialBefore";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path="/afterLogin" element={<AfterLogIn />} />
           <Route path="/tutorial" element={<Tutorial />} />
           <Route path="/historial" element={<Historial />} />
+          <Route path="/tutorialBefore" element={<TutorialBefore />} />
         </Routes>
       </div>
     </Router>

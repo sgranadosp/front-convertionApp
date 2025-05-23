@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const pages = [
   { label: "Conversión de Imágenes", path: "/logIn" },
   { label: "Conversión de Videos", path: "/logIn" },
-  { label: "Tutorial", path: "/logIn" },
+  { label: "Tutorial", path: "/tutorialBefore" },
 ];
 
 function DataNavbar() {
