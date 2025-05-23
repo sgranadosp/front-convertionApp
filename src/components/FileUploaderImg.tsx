@@ -68,10 +68,9 @@ const FileUploaderImg: React.FC = () => {
   const headerTemplate = (options: FileUploadHeaderTemplateOptions) => {
     const { className, chooseButton, uploadButton, cancelButton } = options;
     const value = totalSize / 100000; // Valor de la barra de progreso
-    const formatedValue =
-      fileUploadRef && fileUploadRef.current
-        ? fileUploadRef.current.formatSize(totalSize)
-        : "0 B";
+    const formatedValue = fileUploadRef?.current
+      ? fileUploadRef.current.formatSize(totalSize)
+      : "0 B";
 
     return (
       <div

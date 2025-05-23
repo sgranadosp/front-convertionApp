@@ -67,99 +67,97 @@ const RegisterForm = () => {
   };
 
   return (
-    <>
-      <div className="card-container">
-        <Card
-          title="Formulario de Registro"
-          subTitle="¡Regístrate y disfruta de nuestros servicios!"
-          className="md:w-25rem custom-register-card animate__animated animate__bounceIn"
-          style={{
-            border: "2px solid #673AB7", // púrpura, puedes cambiar el color
-            borderRadius: "10px",
-            padding: "1.5rem",
-            width: "410px",
-            justifyContent: "center",
-          }}
-        >
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="mb-3">
-              <Box
-                component="div"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                  width: "100%",
-                }}
-              >
-                {/* Campo: Nombre de Usuario */}
-                <TextField
-                  fullWidth
-                  {...register("username")}
-                  id="outlined-basic"
-                  label="Nombre de Usuario"
-                  variant="outlined"
-                  color="secondary"
-                  margin="dense"
-                  placeholder="Digite su nombre de usuario"
-                  helperText="* Este campo es obligatorio"
-                />
-                {errors.username && (
-                  <p className="text-danger">{errors.username.message}</p>
-                )}
+    <div className="card-container">
+      <Card
+        title="Formulario de Registro"
+        subTitle="¡Regístrate y disfruta de nuestros servicios!"
+        className="md:w-25rem custom-register-card animate__animated animate__bounceIn"
+        style={{
+          border: "2px solid #673AB7", // púrpura, puedes cambiar el color
+          borderRadius: "10px",
+          padding: "1.5rem",
+          width: "410px",
+          justifyContent: "center",
+        }}
+      >
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="mb-3">
+            <Box
+              component="div"
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                width: "100%",
+              }}
+            >
+              {/* Campo: Nombre de Usuario */}
+              <TextField
+                fullWidth
+                {...register("username")}
+                id="outlined-basic"
+                label="Nombre de Usuario"
+                variant="outlined"
+                color="secondary"
+                margin="dense"
+                placeholder="Digite su nombre de usuario"
+                helperText="* Este campo es obligatorio"
+              />
+              {errors.username && (
+                <p className="text-danger">{errors.username.message}</p>
+              )}
 
-                {/* Campo: Correo Electrónico */}
-                <TextField
-                  fullWidth
-                  {...register("correo", { required: true })}
-                  id="outlined-basic"
-                  label="Correo Electrónico"
-                  variant="outlined"
-                  color="secondary"
-                  margin="dense"
-                  placeholder="Digite su correo electrónico"
-                  helperText="* Este campo es obligatorio"
-                />
-                {errors.correo && (
-                  <p className="text-danger">{errors.correo.message}</p>
-                )}
+              {/* Campo: Correo Electrónico */}
+              <TextField
+                fullWidth
+                {...register("correo", { required: true })}
+                id="outlined-basic"
+                label="Correo Electrónico"
+                variant="outlined"
+                color="secondary"
+                margin="dense"
+                placeholder="Digite su correo electrónico"
+                helperText="* Este campo es obligatorio"
+              />
+              {errors.correo && (
+                <p className="text-danger">{errors.correo.message}</p>
+              )}
 
-                {/* Campo: Contraseña */}
-                <TextField
-                  fullWidth
-                  {...register("password", { required: true })}
-                  id="outlined-basic"
-                  label="Contraseña"
-                  variant="outlined"
-                  color="secondary"
-                  margin="dense"
-                  placeholder="Digite su contraseña"
-                  helperText="* Este campo es obligatorio"
-                />
-                {errors.password && (
-                  <p className="text-danger">{errors.password.message}</p>
-                )}
-              </Box>
-            </div>
-            {/* Botón de envío */}
-            <div className="btn-container">
-              <button
-                disabled={!isValid}
-                className="btn custom-register-card"
-                type="submit"
-              >
-                Registrarse
-              </button>
-            </div>
-            {/* Enlace a login */}
-            <p className="register-footer-text">
-              ¿Ya tienes una cuenta?{" "}
-              <LinkTextButton to="/logIn">Accede aquí</LinkTextButton>
-            </p>
-          </form>
-        </Card>
-      </div>
-    </>
+              {/* Campo: Contraseña */}
+              <TextField
+                fullWidth
+                {...register("password", { required: true })}
+                id="outlined-basic"
+                label="Contraseña"
+                variant="outlined"
+                color="secondary"
+                margin="dense"
+                placeholder="Digite su contraseña"
+                helperText="* Este campo es obligatorio"
+              />
+              {errors.password && (
+                <p className="text-danger">{errors.password.message}</p>
+              )}
+            </Box>
+          </div>
+          {/* Botón de envío */}
+          <div className="btn-container">
+            <button
+              disabled={!isValid}
+              className="btn custom-register-card"
+              type="submit"
+            >
+              Registrarse
+            </button>
+          </div>
+          {/* Enlace a login */}
+          <p className="register-footer-text">
+            ¿Ya tienes una cuenta?{" "}
+            <LinkTextButton to="/logIn">Accede aquí</LinkTextButton>
+          </p>
+        </form>
+      </Card>
+    </div>
   );
 };
 
